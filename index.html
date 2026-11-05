@@ -1,331 +1,215 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1B4332">
   <title>The Journey Between — Terry</title>
-  <meta name="description" content="The visual diary and portfolio of Terry, photographer, explorer, and Common Infocomm Programme student." />
-  <script>
-    try {
-      document.documentElement.dataset.theme = localStorage.getItem("journey-theme") || "dark";
-    } catch (error) {
-      document.documentElement.dataset.theme = "dark";
-    }
-  </script>
-
-  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="css/style.css" />
+  <meta name="description" content="Terry's travel journal of transport, nature, photography and Minecraft railways.">
+  <link rel="icon" href="assets/images/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('journey-theme')||'dark'}catch(e){}</script>
 </head>
 <body>
-
-  <!-- ============ NAVIGATION ============ -->
   <header class="site-header">
-    <nav class="nav container">
-      <a href="#" class="nav-logo" aria-label="The Journey Between home">
-        <img class="logo-mark" src="assets/images/rail-logo.jpg" alt="" />
-        <span>The Journey Between</span>
-      </a>
-      <ul class="nav-links">
-        <li><a href="#journey">Journey</a></li>
-        <li><a href="#gallery">Collections</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-      <button class="theme-toggle" id="theme-toggle" type="button" role="switch" aria-label="Switch to light mode" aria-checked="false">
-        <span class="track-sun">☀</span>
-        <span class="track-train" aria-hidden="true"><span></span></span>
-        <span class="track-moon">☾</span>
-      </button>
-      <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open navigation">
-        <span></span><span></span>
-      </button>
+    <a class="brand" href="#home" aria-label="The Journey Between home">
+      <img src="assets/images/rail-logo.jpg" alt="">
+      <span>The Journey Between</span>
+    </a>
+    <nav class="desktop-nav" aria-label="Primary navigation">
+      <a href="#about">About</a><a href="#destinations">Destinations</a><a href="#railways">Railways</a>
+      <a href="#nature">Nature</a><a href="#virtual">Virtual Railways</a>
     </nav>
-    <div class="mobile-menu" id="mobile-menu">
-      <a href="#journey">Journey</a>
-      <a href="#gallery">Collections</a>
-      <a href="#contact">Contact</a>
-    </div>
+    <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle colour theme">
+      <span class="sun">☀</span><span class="toggle-knob"></span><span class="moon">☾</span>
+    </button>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Open navigation" aria-expanded="false"><span></span><span></span></button>
   </header>
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+    <a href="#about">About</a><a href="#destinations">Destinations</a><a href="#railways">Railways</a>
+    <a href="#nature">Nature</a><a href="#virtual">Virtual Railways</a>
+  </nav>
 
   <main>
-
-    <!-- ============ HERO ============ -->
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-route" aria-hidden="true"></div>
-      <div class="hero-copy">
-        <p class="eyebrow reveal">Field notes / 001</p>
-        <h1 id="hero-title" class="reveal">The Journey<br><em>Between.</em></h1>
-        <p class="hero-role reveal">Terry — 1st-Year Student in the Common Infocomm Programme</p>
-        <p class="hero-intro reveal">Passionate about photography, transport systems, technology, nature, and exploration. I capture the stories of railways, city life, landscapes, and the moments that connect them.</p>
-        <div class="hero-actions reveal">
-          <a href="#gallery" class="btn btn-primary">Explore the collections <span>↗</span></a>
-          <a href="#journey" class="text-link">Follow my route <span>↓</span></a>
+    <section class="hero" id="home">
+      <div class="hero-sky"></div>
+      <div class="hero-copy reveal">
+        <p class="eyebrow">Personal travel journal · Singapore</p>
+        <h1>The Journey<br><em>Between</em></h1>
+        <p class="hero-name">TERRY</p>
+        <p class="hero-role">1st-Year Student, Common Infocomm Programme</p>
+        <p class="hero-tagline">Exploring the world through transport, nature, and photography.</p>
+        <div class="hero-actions">
+          <a class="button" href="#journey-map">Follow the route <span>↓</span></a>
+          <a class="text-link" href="#destinations">Open travel journal</a>
         </div>
       </div>
-      <figure class="hero-image reveal">
-        <img src="https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&w=1800&q=88" alt="A person looking across a misty forest landscape">
-        <figcaption><span>35.6762° N</span><span>139.6503° E</span></figcaption>
-      </figure>
-      <div class="hero-index" aria-hidden="true">01 — 05</div>
+      <div class="hero-visual reveal">
+        <div class="hero-logo"><img src="assets/images/rail-logo.jpg" alt="Terry's train logo"></div>
+        <img class="hero-photo" src="https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&amp;fit=crop&amp;w=1800&amp;q=88" alt="Misty forest landscape">
+        <span class="photo-coordinate">01.3521° N &nbsp; 103.8198° E</span>
+      </div>
+      <div class="mountains" aria-hidden="true"></div>
     </section>
 
-    <!-- ============ ABOUT ============ -->
-    <section id="journey" class="journey section">
+    <section class="stats-strip" aria-label="Journey statistics">
+      <div><strong data-count="1840">0</strong><span>Photos taken</span></div>
+      <div><strong data-count="12">0</strong><span>Train fleets documented</span></div>
+      <div><strong data-count="4">0</strong><span>Destinations visited</span></div>
+      <div><strong data-count="8">0</strong><span>Minecraft projects</span></div>
+      <div><strong data-count="27">0</strong><span>Places explored</span></div>
+    </section>
+
+    <section class="about section" id="about">
       <div class="section-heading reveal">
-        <p class="eyebrow">My route / 2021 — now</p>
-        <h2>Stations along<br>the way.</h2>
+        <p class="eyebrow">The story so far</p>
+        <h2>A route through<br><em>my interests.</em></h2>
       </div>
-      <div class="route-map" aria-label="Terry's journey timeline">
-        <div class="route-line" aria-hidden="true"></div>
-        <article class="station reveal">
-          <div class="station-dot"><span>01</span></div>
-          <div class="station-card">
-            <p class="station-meta">The beginning · Discovery</p>
-            <h3>Learning to look</h3>
-            <p>Photography began as a way to remember places. Soon, noticing light, framing, and the quiet details between destinations became a habit.</p>
-          </div>
+      <div class="about-intro reveal">
+        <p>Hi, I'm Terry, a 1st-Year student in the Common Infocomm Programme with a passion for photography, transport systems, railways, technology, nature, travel, and digital creativity. Through this portfolio, I document the journeys, places, and experiences that shape my interests and adventures.</p>
+      </div>
+      <div class="timeline" aria-label="Terry's journey timeline">
+        <div class="timeline-line"></div>
+        <article class="station reveal"><span>01</span><div><small>Discovery</small><h3>Learning to notice</h3><p>First interest in photography · Exploring new places</p></div></article>
+        <article class="station reveal"><span>02</span><div><small>Rail enthusiast</small><h3>Following the tracks</h3><p>Interest in MRT systems · Train spotting · Transport photography</p></div></article>
+        <article class="station reveal"><span>03</span><div><small>Nature explorer</small><h3>Finding the quiet places</h3><p>Nature photography · Landscapes · Wildlife and parks</p></div></article>
+        <article class="station reveal"><span>04</span><div><small>Technology</small><h3>Building the network</h3><p>Common Infocomm Programme · Programming · Website development</p></div></article>
+        <article class="station reveal"><span>05</span><div><small>Virtual railways</small><h3>Drawing new lines</h3><p>Minecraft Transit Railway projects · Railway network creation</p></div></article>
+        <article class="station reveal"><span>06</span><div><small>Future destination</small><h3>The line continues</h3><p>Future travels · Career aspirations · New photography adventures</p></div></article>
+      </div>
+      <div class="facts-grid">
+        <article class="fact-card reveal"><span>📍</span><small>Location</small><strong>Singapore</strong></article>
+        <article class="fact-card reveal"><span>🚆</span><small>Interests</small><strong>Systems · Railways · Tech</strong></article>
+        <article class="fact-card reveal"><span>📸</span><small>Favourite photography</small><strong>Transport · Nature · Scenic</strong></article>
+        <article class="fact-card reveal"><span>🎮</span><small>Hobbies</small><strong>MTR · Photography · Exploration</strong></article>
+        <article class="fact-card reveal"><span>🌎</span><small>Travel destinations</small><strong>Singapore · Bangkok · Taipei · Dubai</strong></article>
+      </div>
+    </section>
+
+    <section class="map-section section" id="journey-map">
+      <div class="section-heading light-heading reveal">
+        <div><p class="eyebrow">Route network · 01—05</p><h2>Across the<br><em>world.</em></h2></div>
+        <p>Four places. One continuously unfolding journey. Select a marker to preview a destination.</p>
+      </div>
+      <div class="journey-map reveal">
+        <svg viewBox="0 0 1000 460" role="img" aria-label="World route connecting Singapore, Bangkok, Taipei and Dubai">
+          <path class="map-land" d="M18 250c88-26 144-95 236-74 68 16 86 79 151 80 60 0 92-68 154-49 75 23 66 93 137 98 89 7 139-91 286-58"/>
+          <path class="route-line-svg" d="M195 337C310 238 350 300 455 268S630 181 720 226 825 150 906 171"/>
+          <circle class="route-pulse" cx="195" cy="337" r="7"/><circle cx="455" cy="268" r="7"/>
+          <circle cx="720" cy="226" r="7"/><circle cx="906" cy="171" r="7"/>
+        </svg>
+        <button class="map-marker m-singapore" data-place="Singapore" style="--x:19.5%;--y:73%"><span>01</span><strong>Singapore</strong></button>
+        <button class="map-marker m-bangkok" data-place="Bangkok" style="--x:45.5%;--y:58%"><span>02</span><strong>Bangkok</strong></button>
+        <button class="map-marker m-taipei" data-place="Taipei" style="--x:72%;--y:49%"><span>03</span><strong>Taipei</strong></button>
+        <button class="map-marker m-dubai" data-place="Dubai" style="--x:90%;--y:37%"><span>04</span><strong>Dubai</strong></button>
+      </div>
+      <aside class="map-preview" id="map-preview"><span>Passport preview</span><strong>Singapore</strong><p>Garden city, island railways and familiar routes made new through the camera.</p><a href="#singapore">View journal ↗</a></aside>
+      <div class="passport-progress"><span>Journey progress</span><strong>4 / 12 stamps</strong><div><i></i></div></div>
+    </section>
+
+    <section class="destinations section" id="destinations">
+      <div class="section-heading reveal"><p class="eyebrow">Travel journal</p><h2>Four places,<br><em>four stories.</em></h2></div>
+      <div class="destination-grid">
+        <article class="destination-card featured reveal" id="singapore">
+          <img src="https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&amp;fit=crop&amp;w=1600&amp;q=85" alt="Singapore skyline">
+          <div class="destination-card-copy"><span>🇸🇬 · Home base · SIN</span><h3>Singapore</h3><p>Gardens, islands, rail lines and the familiar made unfamiliar.</p><a href="#singapore-journal">Open journal ↗</a></div>
         </article>
-        <article class="station reveal">
-          <div class="station-dot"><span>02</span></div>
-          <div class="station-card">
-            <p class="station-meta">The detour · Exploration</p>
-            <h3>Following the tracks</h3>
-            <p>Railways, city streets, and faraway landscapes opened a wider world. Each journey became a story about systems, people, and place.</p>
-          </div>
+        <article class="destination-card reveal" id="bangkok">
+          <img src="https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&amp;fit=crop&amp;w=1200&amp;q=85" alt="Bangkok temple">
+          <div class="destination-card-copy"><span>🇹🇭 · BKK</span><h3>Bangkok</h3><p>Elevated rails and golden temple light.</p></div>
         </article>
-        <article class="station reveal">
-          <div class="station-dot"><span>03</span></div>
-          <div class="station-card">
-            <p class="station-meta">The connection · Technology</p>
-            <h3>Understanding the network</h3>
-            <p>Interest in transport grew into curiosity about the technology that keeps modern cities moving—and the possibilities hidden in new systems.</p>
-          </div>
+        <article class="destination-card reveal" id="taipei">
+          <img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&amp;fit=crop&amp;w=1200&amp;q=85" alt="Taipei city">
+          <div class="destination-card-copy"><span>🇹🇼 · TPE</span><h3>Taipei</h3><p>Mountain edges, night markets and efficient metros.</p></div>
         </article>
-        <article class="station reveal">
-          <div class="station-dot"><span>04</span></div>
-          <div class="station-card">
-            <p class="station-meta">The present · Common Infocomm Programme</p>
-            <h3>Building the next stop</h3>
-            <p>Now I am developing technical skills while continuing to explore. The programme is turning curiosity into practical tools for the journeys ahead.</p>
-          </div>
+        <article class="destination-card reveal" id="dubai">
+          <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&amp;fit=crop&amp;w=1200&amp;q=85" alt="Dubai skyline">
+          <div class="destination-card-copy"><span>🇦🇪 · DXB</span><h3>Dubai</h3><p>Driverless trains across a future-facing city.</p></div>
+        </article>
+      </div>
+
+      <article class="journal-entry reveal" id="singapore-journal">
+        <div class="journal-hero"><img src="https://images.unsplash.com/photo-1508964942454-1a56651d54ac?auto=format&amp;fit=crop&amp;w=1800&amp;q=85" alt="Singapore gardens"><span>Field journal 01</span></div>
+        <div class="journal-copy">
+          <p class="eyebrow">Singapore · 2025</p><h3>The island route</h3>
+          <blockquote>“Every familiar platform can become a new starting point when you learn to look longer.”</blockquote>
+          <p>Singapore is where the journey continues to begin: an evolving rail network, tropical gardens, coastal light and a city that rewards close observation.</p>
+          <dl><div><dt>Duration</dt><dd>3 days</dd></div><div><dt>Transport</dt><dd>MRT · Bus · Walking</dd></div><div><dt>Highlights</dt><dd>Gardens, Marina Bay, Changi</dd></div></dl>
+          <details><summary>Read travel notes &amp; trip timeline <span>+</span></summary><p><strong>Day 01 — Departure:</strong> Morning rail photography and an evening walk around Marina Bay.<br><strong>Day 02 — The garden line:</strong> Gardens by the Bay, waterfront light and an interchange study.<br><strong>Day 03 — Connection:</strong> Changi's architecture, transport observations and the homeward line.</p></details>
+        </div>
+      </article>
+    </section>
+
+    <section class="railways section" id="railways">
+      <div class="section-heading rail-heading reveal"><div><p class="eyebrow">Terry Rail Archives</p><h2>Train fleet<br><em>database.</em></h2></div><p>Search the rolling stock that turns each journey into a story of movement.</p></div>
+      <div class="fleet-tools reveal">
+        <label><span class="sr-only">Search trains</span><input id="train-search" type="search" placeholder="Search model or operator"></label>
+        <select id="train-filter" aria-label="Filter train category"><option value="all">All categories</option><option>MRT</option><option>Metro</option><option>High Speed Rail</option><option>Airport Transit</option><option>Historical</option></select>
+        <select id="train-sort" aria-label="Sort trains"><option value="name">Sort A–Z</option><option value="year">Year introduced</option></select>
+      </div>
+      <div class="fleet-grid" id="fleet-grid">
+        <article class="train-card reveal" data-category="MRT" data-name="Alstom Movia R151" data-year="2023">
+          <img src="https://images.unsplash.com/photo-1556388158-158ea5ccacbd?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Modern metro train">
+          <div><span class="train-tag">MRT · Singapore</span><h3>Alstom Movia R151</h3><p>SMRT · Introduced 2023</p><button class="train-expand">View specifications +</button><div class="train-specs"><dl><div><dt>Length</dt><dd>138 m</dd></div><div><dt>Configuration</dt><dd>6 cars</dd></div></dl><p>Personal note: A study in clean industrial form and the future of the North-South and East-West Lines.</p></div></div>
+        </article>
+        <article class="train-card reveal" data-category="Metro" data-name="Autechre Blue Line" data-year="2017">
+          <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Urban metro">
+          <div><span class="train-tag">Metro · Taipei</span><h3>CRRC Blue Line EMU</h3><p>TRTC · Introduced 2017</p><button class="train-expand">View specifications +</button><div class="train-specs"><dl><div><dt>Power</dt><dd>750 V DC</dd></div><div><dt>Configuration</dt><dd>6 cars</dd></div></dl><p>Personal note: Sharp typography, efficient stations and a memorable Taipei blue.</p></div></div>
+        </article>
+        <article class="train-card reveal" data-category="High Speed Rail" data-name="Taiwan Railways EMU3000" data-year="2021">
+          <img src="https://images.unsplash.com/photo-1473445361085-b9a07f55608b?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="High speed railway landscape">
+          <div><span class="train-tag">High Speed Rail · Taiwan</span><h3>EMU3000</h3><p>TRA · Introduced 2021</p><button class="train-expand">View specifications +</button><div class="train-specs"><dl><div><dt>Max speed</dt><dd>130 km/h</dd></div><div><dt>Configuration</dt><dd>8–12 cars</dd></div></dl><p>Personal note: Spacious interiors and long views across Taiwan's coastal rail corridors.</p></div></div>
+        </article>
+        <article class="train-card reveal" data-category="Airport Transit" data-name="Dubai Metro train" data-year="2009">
+          <img src="https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Dubai metro area">
+          <div><span class="train-tag">Airport Transit · Dubai</span><h3>Dubai Metro Train</h3><p>RTA · Introduced 2009</p><button class="train-expand">View specifications +</button><div class="train-specs"><dl><div><dt>Automation</dt><dd>Driverless</dd></div><div><dt>Power</dt><dd>750 V DC</dd></div></dl><p>Personal note: Elevated geometry framing an ever-changing skyline.</p></div></div>
         </article>
       </div>
     </section>
 
-    <!-- ============ GALLERY ============ -->
-    <section id="gallery" class="gallery section">
-      <div class="section-heading gallery-heading reveal">
-        <div>
-          <p class="eyebrow">Visual field guide / 01—05</p>
-          <h2>Collections</h2>
-        </div>
-        <p>A study of movement, place, and the moments found while moving through both.</p>
+    <section class="nature section" id="nature">
+      <div class="section-heading reveal"><p class="eyebrow">Nature archive</p><h2>Where land<br><em>meets light.</em></h2></div>
+      <div class="nature-filter" aria-label="Nature category filters"><button class="active" data-nature-filter="all">All stories</button><button data-nature-filter="forest">Forests</button><button data-nature-filter="mountain">Mountains</button><button data-nature-filter="sunset">Sunsets</button><button data-nature-filter="park">Parks</button></div>
+      <div class="nature-gallery">
+        <button class="nature-photo tall" data-category="forest" data-lightbox data-caption="Forest silence · Singapore"><img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&amp;fit=crop&amp;w=1100&amp;q=85" alt="Sunlit green forest"><span>Forest</span></button>
+        <button class="nature-photo wide" data-category="mountain" data-lightbox data-caption="Mountain pass · Taiwan"><img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&amp;fit=crop&amp;w=1400&amp;q=85" alt="Mountain ridge"><span>Mountain</span></button>
+        <button class="nature-photo" data-category="park" data-lightbox data-caption="Lakeside pause · Singapore"><img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&amp;fit=crop&amp;w=1000&amp;q=85" alt="Lake and mountains"><span>Park</span></button>
+        <button class="nature-photo" data-category="sunset" data-lightbox data-caption="Last light · Bangkok"><img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&amp;fit=crop&amp;w=1000&amp;q=85" alt="Landscape at sunset"><span>Sunset</span></button>
+        <button class="nature-photo wide" data-category="forest" data-lightbox data-caption="Into the green · Singapore"><img src="https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&amp;fit=crop&amp;w=1400&amp;q=85" alt="Dense tropical forest"><span>Forest</span></button>
       </div>
+    </section>
 
-      <nav class="collection-nav" aria-label="Photography collections">
-        <a class="active" href="#transport" data-filter="all"><span>01</span> All journeys</a>
-        <a href="#transport" data-filter="transport"><span>02</span> City journeys</a>
-        <a href="#nature" data-filter="nature"><span>03</span> Nature</a>
-        <a href="#urban" data-filter="urban"><span>04</span> Urban</a>
-        <a href="#landscape" data-filter="landscape"><span>05</span> Landscapes</a>
-      </nav>
-
-      <div class="journey-board reveal" id="transport" data-category="transport">
-        <div class="journey-board-heading">
-          <div>
-            <p class="eyebrow">Collection 01 / City journeys</p>
-            <h3>The long way across Asia</h3>
-          </div>
-          <p>Four cities, four networks, and a route traced through metro platforms, airport rails, night buses, station halls, and waterfronts.</p>
-        </div>
-        <div class="route-map" aria-label="Map connecting Dubai, Taipei, Bangkok and Singapore">
-          <svg viewBox="0 0 1000 330" role="img" aria-label="Journey route map">
-            <path class="map-coast" d="M22 236 C155 280 242 188 330 224 S470 290 560 210 S735 145 825 180 S936 224 978 160"/>
-            <path class="animated-route" d="M120 220 C280 100, 390 250, 510 164 S735 88, 870 166"/>
-            <circle cx="120" cy="220" r="7"/><circle cx="510" cy="164" r="7"/>
-            <circle cx="870" cy="166" r="7"/>
+    <section class="virtual section" id="virtual">
+      <div class="virtual-top reveal">
+        <p class="eyebrow">Virtual Railways · Build Division</p><span>NETWORK STATUS <i></i> OPERATING</span>
+      </div>
+      <div class="section-heading virtual-heading reveal"><div><h2>Building the<br><em>imagined city.</em></h2></div><p>Minecraft Transit Railway projects, station studies and future network expansion.</p></div>
+      <div class="network-board reveal">
+        <div class="network-map">
+          <svg viewBox="0 0 900 520" aria-label="Minecraft rail network map">
+            <path class="network-line line-a" d="M70 350 C180 350 160 140 300 140 S455 380 575 380 700 240 830 240"/>
+            <path class="network-line line-b" d="M180 430 C260 390 285 280 380 280 S560 180 650 180 750 320 850 320"/>
+            <circle cx="70" cy="350" r="9"/><circle cx="300" cy="140" r="9"/><circle cx="575" cy="380" r="9"/><circle cx="830" cy="240" r="9"/><circle cx="650" cy="180" r="9"/>
           </svg>
-          <a href="#dubai" class="map-stop map-dubai"><span>01</span><strong>Dubai</strong><small>25.2048° N</small></a>
-          <a href="#bangkok" class="map-stop map-bangkok"><span>02</span><strong>Bangkok</strong><small>13.7563° N</small></a>
-          <a href="#taipei" class="map-stop map-taipei"><span>03</span><strong>Taipei</strong><small>25.0330° N</small></a>
-          <a href="#singapore" class="map-stop map-singapore"><span>04</span><strong>Singapore</strong><small>1.3521° N</small></a>
+          <span class="station-dot dot-a">J1</span><span class="station-dot dot-b">GARDEN</span><span class="station-dot dot-c">C3</span><span class="station-dot dot-d">HARBOR</span>
         </div>
+        <aside><p class="eyebrow">Network overview</p><h3>Junction Metro</h3><dl><div><dt>Lines</dt><dd>2</dd></div><div><dt>Stations</dt><dd>16</dd></div><div><dt>Distance</dt><dd>8.4 km</dd></div></dl><a href="#build-log">View build log ↓</a></aside>
       </div>
-
-      <section class="destination reveal" id="dubai" data-category="transport" aria-labelledby="dubai-title">
-        <div class="destination-hero">
-          <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1800&q=88" alt="Dubai skyline and highways at dusk">
-          <div class="destination-title"><p>Stop 01 · UAE</p><h3 id="dubai-title">Dubai 🇦🇪</h3></div>
-          <span class="destination-code">DXB / 25.2048° N</span>
-        </div>
-        <div class="destination-content">
-          <div class="field-notes">
-            <p class="eyebrow">From the field notebook</p>
-            <blockquote>“Scale changes what feels close. Every elevated road, station, and tower turns distance into a carefully drawn line.”</blockquote>
-            <p>Dubai moves vertically. The Metro's driverless trains make the city's ambitions legible between glass towers, desert light, and airport connections.</p>
-            <ul><li>Dubai Metro &amp; Tram</li><li>Airport transit</li><li>RTA buses</li><li>Urban stations</li></ul>
-          </div>
-          <div class="destination-gallery masonry-gallery">
-            <button class="gallery-frame featured" data-lightbox data-caption="Dubai Metro arrival · Red Line"><img src="https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&fit=crop&w=1400&q=85" alt="Dubai city architecture beside a road"></button>
-            <button class="gallery-frame" data-lightbox data-caption="Burj Khalifa district · Afternoon"><img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=900&q=85" alt="Dubai skyline beneath a blue sky"></button>
-            <button class="gallery-frame" data-lightbox data-caption="Coastal infrastructure · Sunset"><img src="https://images.unsplash.com/photo-1526495124232-a04e1849168c?auto=format&fit=crop&w=900&q=85" alt="Modern architecture in Dubai"></button>
-          </div>
-        </div>
-        <ol class="journey-timeline"><li><time>08:20</time><span>DXB arrival</span></li><li><time>09:40</time><span>Red Line to Marina</span></li><li><time>13:15</time><span>Street-level stations</span></li><li><time>18:50</time><span>Waterfront tram</span></li></ol>
-      </section>
-
-      <section class="destination reveal" id="taipei" data-category="transport" aria-labelledby="taipei-title">
-        <div class="destination-hero">
-          <img src="assets/images/taipei-stop-02-cover.jpeg" alt="Taipei skyline viewed from the surrounding green hills">
-          <div class="destination-title"><p>Stop 02 · Taiwan</p><h3 id="taipei-title">Taipei 🇹🇼</h3></div>
-          <span class="destination-code">TPE / 25.0330° N</span>
-        </div>
-        <div class="destination-content">
-          <div class="field-notes">
-            <p class="eyebrow">From the field notebook</p>
-            <blockquote>“The mountain weather arrives in the station reflections: green signs, rain-washed tiles, and a train arriving on time.”</blockquote>
-            <p>Taipei is intimate and layered. Metro concourses carry people under lively neighbourhoods, while buses and airport rail connect dense streets to the wider island.</p>
-            <ul><li>Taoyuan Airport MRT</li><li>Metro Taipei</li><li>City buses</li><li>Railway stations</li></ul>
-          </div>
-          <div class="destination-gallery masonry-gallery">
-            <button class="gallery-frame" data-lightbox data-caption="Metro platform · Evening"><img src="https://images.unsplash.com/photo-1555680202-c86f0e12f086?auto=format&fit=crop&w=900&q=85" alt="Busy illuminated Asian city street"></button>
-            <button class="gallery-frame featured" data-lightbox data-caption="Taipei transit interchange · Blue hour"><img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=1400&q=85" alt="Dense Taipei-style cityscape"></button>
-            <button class="gallery-frame" data-lightbox data-caption="Rain and infrastructure · Xinyi"><img src="https://images.unsplash.com/photo-1536098561742-ca998e48cbcc?auto=format&fit=crop&w=900&q=85" alt="Asian city street at night"></button>
-          </div>
-        </div>
-        <ol class="journey-timeline"><li><time>07:10</time><span>Airport MRT</span></li><li><time>08:05</time><span>Main Station</span></li><li><time>12:30</time><span>Xinyi Line</span></li><li><time>21:10</time><span>Night bus home</span></li></ol>
-      </section>
-
-      <section class="destination reveal" id="bangkok" data-category="transport" aria-labelledby="bangkok-title">
-        <div class="destination-hero">
-          <img src="https://images.unsplash.com/photo-1508009603885-50cf7c579365?auto=format&fit=crop&w=1800&q=88" alt="Bangkok skyline and the Chao Phraya River">
-          <div class="destination-title"><p>Stop 03 · Thailand</p><h3 id="bangkok-title">Bangkok 🇹🇭</h3></div>
-          <span class="destination-code">BKK / 13.7563° N</span>
-        </div>
-        <div class="destination-content">
-          <div class="field-notes">
-            <p class="eyebrow">From the field notebook</p>
-            <blockquote>“Above the traffic, the elevated rail moves in a second city—interchanging heat, colour, river crossings, and sound.”</blockquote>
-            <p>Bangkok rewards looking both up and across. Skytrain viaducts, river boats, colourful terminals, and buses reveal a city made of overlapping routes.</p>
-            <ul><li>BTS Skytrain</li><li>Airport Rail Link</li><li>MRT</li><li>River boats &amp; buses</li></ul>
-          </div>
-          <div class="destination-gallery masonry-gallery">
-            <button class="gallery-frame featured" data-lightbox data-caption="Sukhumvit line · Golden hour"><img src="https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=1400&q=85" alt="Thai temple architecture and city skyline"></button>
-            <button class="gallery-frame" data-lightbox data-caption="Elevated interchange · Afternoon"><img src="https://images.unsplash.com/photo-1563492065599-3520f775eeed?auto=format&fit=crop&w=900&q=85" alt="Bangkok temple and buildings"></button>
-            <button class="gallery-frame" data-lightbox data-caption="River connection · Evening"><img src="https://images.unsplash.com/photo-1508009603885-50cf7c579365?auto=format&fit=crop&w=900&q=85" alt="Bangkok at night"></button>
-          </div>
-        </div>
-        <ol class="journey-timeline"><li><time>06:45</time><span>Airport Rail Link</span></li><li><time>08:30</time><span>BTS transfer</span></li><li><time>16:20</time><span>River pier</span></li><li><time>19:45</time><span>City bus</span></li></ol>
-      </section>
-
-      <section class="destination reveal" id="singapore" data-category="transport" aria-labelledby="singapore-title">
-        <div class="destination-hero">
-          <img src="https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&w=1800&q=88" alt="Singapore skyline beside Marina Bay">
-          <div class="destination-title"><p>Stop 04 · Singapore</p><h3 id="singapore-title">Singapore 🇸🇬</h3></div>
-          <span class="destination-code">SIN / 1.3521° N</span>
-        </div>
-        <div class="destination-content">
-          <div class="field-notes">
-            <p class="eyebrow">From the field notebook</p>
-            <blockquote>“The network feels seamless because every pause is considered—from the platform edge to the tree line above it.”</blockquote>
-            <p>Singapore brings transit, landscape, and architecture into one precise visual system. MRT interchanges and airport links make long journeys feel effortless.</p>
-            <ul><li>SMRT &amp; SBS Transit</li><li>Changi Airport skytrain</li><li>Bus interchanges</li><li>Coastal stations</li></ul>
-          </div>
-          <div class="destination-gallery masonry-gallery">
-            <button class="gallery-frame" data-lightbox data-caption="Marina rail crossing · Morning"><img src="https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&w=900&q=85" alt="Singapore skyline and Marina Bay"></button>
-            <button class="gallery-frame featured" data-lightbox data-caption="Gardens and transit · Afternoon"><img src="https://images.unsplash.com/photo-1508964942454-1a56651d54ac?auto=format&fit=crop&w=1400&q=85" alt="Modern Singapore architecture"></button>
-            <button class="gallery-frame" data-lightbox data-caption="Changi connection · Blue hour"><img src="https://images.unsplash.com/photo-1527668752968-14dc70a27c95?auto=format&fit=crop&w=900&q=85" alt="Singapore waterfront district"></button>
-          </div>
-        </div>
-        <ol class="journey-timeline"><li><time>09:00</time><span>Changi skytrain</span></li><li><time>10:15</time><span>East-West Line</span></li><li><time>14:00</time><span>Harbour interchange</span></li><li><time>20:30</time><span>Last bus</span></li></ol>
-      </section>
-
-      <article class="collection reveal" id="nature" data-category="nature">
-        <div class="collection-info">
-          <p class="eyebrow">Collection 02 / Nature</p>
-          <h3>Still horizons</h3>
-          <p>The wild places beyond the final stop, observed slowly and from unexpected angles.</p>
-          <span class="collection-count">08 frames</span>
-        </div>
-        <a href="#" class="photo-card photo-wide" aria-label="View mountain photograph">
-          <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1400&q=85" alt="Mountain peaks beneath cloud">
-          <span>High country · 2025</span>
-        </a>
-        <a href="#" class="photo-card photo-small" aria-label="View forest photograph">
-          <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1000&q=85" alt="Sunlight through a green forest">
-          <span>Green corridor · 2024</span>
-        </a>
-      </article>
-
-      <article class="collection reveal" id="urban" data-category="urban">
-        <div class="collection-info">
-          <p class="eyebrow">Collection 03 / Urban exploration</p>
-          <h3>City observatory</h3>
-          <p>Architecture, passing faces, and the hidden patterns that reveal a city to the curious.</p>
-          <span class="collection-count">15 frames</span>
-        </div>
-        <a href="#" class="photo-card photo-small" aria-label="View city street photograph">
-          <img src="https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?auto=format&fit=crop&w=1000&q=85" alt="Dense city buildings viewed from street level">
-          <span>Vertical city · 2025</span>
-        </a>
-        <a href="#" class="photo-card photo-tall" aria-label="View urban night photograph">
-          <img src="https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=1200&q=85" alt="Aerial view of illuminated city streets">
-          <span>Night grid · 2024</span>
-        </a>
-      </article>
-
-      <article class="collection reveal" id="landscape" data-category="landscape">
-        <div class="collection-info">
-          <p class="eyebrow">Collection 04 / Travel & landscapes</p>
-          <h3>Somewhere further</h3>
-          <p>Postcards from roads taken, coastlines crossed, and landscapes that made time feel different.</p>
-          <span class="collection-count">10 frames</span>
-        </div>
-        <a href="#" class="photo-card photo-wide" aria-label="View coastal landscape photograph">
-          <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1400&q=85" alt="Person overlooking a broad landscape">
-          <span>The open road · 2025</span>
-        </a>
-        <a href="#" class="photo-card photo-small" aria-label="View lake photograph">
-          <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1000&q=85" alt="Mountain lake beneath a clear sky">
-          <span>Rest point · 2023</span>
-        </a>
-      </article>
-
-      <article class="projects-band reveal" data-category="projects">
-        <div>
-          <p class="eyebrow">Collection 05 / Personal projects</p>
-          <h3>Experiments between journeys.</h3>
-        </div>
-        <p>Photo essays, mapping ideas, visual studies, and small technical projects connecting interests in places and systems.</p>
-        <a href="#contact" class="round-link" aria-label="Ask about personal projects">↗</a>
-      </article>
+      <div class="build-log reveal" id="build-log"><article><span>01</span><div><small>September 2025 · Complete</small><h3>Central interchange</h3><p>Platform geometry, wayfinding, concourse lighting and passenger flow.</p></div></article><article><span>02</span><div><small>October 2025 · Building</small><h3>Coastal branch</h3><p>Viaducts crossing the waterfront toward Harbor station.</p></div></article><article><span>03</span><div><small>Future expansion</small><h3>Northern airport line</h3><p>A new express connection and rolling-stock showcase.</p></div></article></div>
     </section>
 
-    <!-- ============ CONTACT ============ -->
-    <section id="contact" class="contact section">
-      <div class="contact-route" aria-hidden="true"></div>
-      <p class="eyebrow reveal">End of this line</p>
-      <h2 class="reveal">Where to<br><em>next?</em></h2>
-      <p class="contact-copy reveal">Have a story, a place, or an idea worth exploring? The journey is always better with a connection.</p>
-      <a class="contact-email reveal" href="mailto:hello@example.com">Start a conversation <span>↗</span></a>
+    <section class="contact section">
+      <div><p class="eyebrow">Next station</p><h2>Where will the<br><em>line lead?</em></h2></div>
+      <p>The journey continues with every photograph, every station and every city worth knowing.</p>
+      <a class="button" href="#home">Return to departure ↑</a>
     </section>
-
   </main>
+  <footer><p>© <span id="year"></span> Terry</p><p>The Journey Between</p><a href="#home">Back to top ↑</a></footer>
 
-  <!-- ============ FOOTER ============ -->
-  <footer class="site-footer">
-    <p>© <span id="year"></span> Terry</p>
-    <p>The Journey Between</p>
-    <a href="#">Back to departure ↑</a>
-  </footer>
-
-  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photography viewer" hidden>
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" hidden>
     <button class="lightbox-close" aria-label="Close image viewer">×</button>
-    <button class="lightbox-nav lightbox-prev" aria-label="Previous photograph">←</button>
     <figure><img src="" alt=""><figcaption></figcaption></figure>
-    <button class="lightbox-nav lightbox-next" aria-label="Next photograph">→</button>
   </div>
-
   <script src="js/main.js"></script>
 </body>
 </html>
