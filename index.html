@@ -6,6 +6,13 @@
 
   <title>The Journey Between — Terry</title>
   <meta name="description" content="The visual diary and portfolio of Terry, photographer, explorer, and Common Infocomm Programme student." />
+  <script>
+    try {
+      document.documentElement.dataset.theme = localStorage.getItem("journey-theme") || "dark";
+    } catch (error) {
+      document.documentElement.dataset.theme = "dark";
+    }
+  </script>
 
   <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="css/style.css" />
@@ -16,7 +23,7 @@
   <header class="site-header">
     <nav class="nav container">
       <a href="#" class="nav-logo" aria-label="The Journey Between home">
-        <span class="logo-mark">J/B</span>
+        <img class="logo-mark" src="assets/images/rail-logo.jpg" alt="" />
         <span>The Journey Between</span>
       </a>
       <ul class="nav-links">
@@ -24,6 +31,11 @@
         <li><a href="#gallery">Collections</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
+      <button class="theme-toggle" id="theme-toggle" type="button" role="switch" aria-label="Switch to light mode" aria-checked="false">
+        <span class="track-sun">☀</span>
+        <span class="track-train" aria-hidden="true"><span></span></span>
+        <span class="track-moon">☾</span>
+      </button>
       <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open navigation">
         <span></span><span></span>
       </button>
@@ -164,7 +176,7 @@
 
       <section class="destination reveal" id="taipei" data-category="transport" aria-labelledby="taipei-title">
         <div class="destination-hero">
-          <img src="https://images.unsplash.com/photo-1479118013749-9e6a0b6c9f6d?auto=format&fit=crop&w=1800&q=88" alt="Taipei skyline and surrounding mountains">
+          <img src="assets/images/taipei-stop-02-cover.jpeg" alt="Taipei skyline viewed from the surrounding green hills">
           <div class="destination-title"><p>Stop 02 · Taiwan</p><h3 id="taipei-title">Taipei 🇹🇼</h3></div>
           <span class="destination-code">TPE / 25.0330° N</span>
         </div>

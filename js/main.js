@@ -5,6 +5,21 @@
 // Footer year
 document.getElementById("year").textContent = new Date().getFullYear();
 
+const themeToggle = document.getElementById("theme-toggle");
+
+function applyTheme(theme) {
+  document.documentElement.dataset.theme = theme;
+  const isLight = theme === "light";
+  themeToggle.setAttribute("aria-checked", String(isLight));
+  themeToggle.setAttribute("aria-label", isLight ? "Switch to dark mode" : "Switch to light mode");
+  try { localStorage.setItem("journey-theme", theme); } catch (error) {}
+}
+
+applyTheme(document.documentElement.dataset.theme || "dark");
+themeToggle.addEventListener("click", () => {
+  applyTheme(document.documentElement.dataset.theme === "dark" ? "light" : "dark");
+});
+
 const menuToggle = document.getElementById("menu-toggle");
 const mobileMenu = document.getElementById("mobile-menu");
 
@@ -92,6 +107,20 @@ document.addEventListener("keydown", (event) => {
   if (event.key === "Escape") closeLightbox();
   if (event.key === "ArrowLeft") showLightbox(activeImage - 1);
   if (event.key === "ArrowRight") showLightbox(activeImage + 1);
+});
+
+document.querySelectorAll(".destination-gallery").forEach((gallery) => {
+  let startX = 0;
+  gallery.addEventListener("touchstart", (event) => {
+    startX = event.changedTouches[0].screenX;
+  }, { passive: true });
+  gallery.addEventListener("touchend", (event) => {
+    const distance = event.changedTouches[0].screenX - startX;
+    if (Math.abs(distance) < 40) return;
+    const visibleImages = gallery.querySelectorAll("[data-lightbox]");
+    const firstImage = visibleImages[0];
+    if (distance < 0) firstImage.click();
+  }, { passive: true });
 });
 
 window.addEventListener("scroll", () => {
